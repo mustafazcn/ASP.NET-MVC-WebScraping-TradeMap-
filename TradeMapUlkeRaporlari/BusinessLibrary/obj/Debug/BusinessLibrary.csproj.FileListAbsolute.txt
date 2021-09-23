@@ -1,0 +1,9 @@
+C:\Users\ASUS\source\repos\TradeMapUlkeRaporlari\BusinessLibrary\bin\Debug\BusinessLibrary.dll
+C:\Users\ASUS\source\repos\TradeMapUlkeRaporlari\BusinessLibrary\bin\Debug\BusinessLibrary.pdb
+C:\Users\ASUS\source\repos\TradeMapUlkeRaporlari\BusinessLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ASUS\source\repos\TradeMapUlkeRaporlari\BusinessLibrary\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ASUS\source\repos\TradeMapUlkeRaporlari\BusinessLibrary\obj\Debug\BusinessLibrary.csproj.AssemblyReference.cache
+C:\Users\ASUS\source\repos\TradeMapUlkeRaporlari\BusinessLibrary\obj\Debug\BusinessLibrary.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\TradeMapUlkeRaporlari\BusinessLibrary\obj\Debug\BusinessLibrary.csproj.CopyComplete
+C:\Users\ASUS\source\repos\TradeMapUlkeRaporlari\BusinessLibrary\obj\Debug\BusinessLibrary.dll
+C:\Users\ASUS\source\repos\TradeMapUlkeRaporlari\BusinessLibrary\obj\Debug\BusinessLibrary.pdb

@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-12 m-auto">
+        <div class="card">
+            <div class="card-header card-header-rose card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">add</i>
+                </div>
+                <h4 class="card-title">Produck Ülke Ekle</h4>
+
+            </div>
+            <div class="card-body" id="form1">
+
+                <div class="row">
+                    <div class="col-8">
+                        <label class="control-label">Mail </label>
+                        <input type="email" class="form-control" name="txtMail" id="txtMail" data-required='true' data-group_name='ModalForm' data-message_type='formmessage' />
+                    </div>
+                    <div class="col-8">
+                        <label class="control-label">Şifre </label>
+                        <input type="password" class="form-control" name="txtSifre" id="txtSifre" data-required='true' data-group_name='ModalForm' data-message_type='formmessage' />
+                    </div>
+                    <div class="col-6">
+                        <label class="control-label ">Ülke Adı </label>
+                        <input type="text" class="form-control" name="txtProcUlkeAd" id="txtProcUlkeAd" data-required='true' data-group_name='ModalForm' data-message_type='formmessage' />
+                    </div>
+                </div>
+                <br />
+                <a class="btn btn-sm btn-success" data-mode="ProcEkleIslem" data-data1="">+&nbsp;Ekle</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 m-auto">
+        <div class="card">
+            <div class="card-header card-header-rose card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">add</i>
+                </div>
+                <h4 class="card-title">Genel Ülke Ekle</h4>
+
+            </div>
+            <div class="card-body" id="form2">
+
+                <div class="row">
+                    <div class="col-6">
+                        <label class="control-label">Ülke Adı </label>
+                        <input type="text" class="form-control" name="txtUlkeAd" id="txtUlkeAd" data-required='true' data-group_name='ModalForm' data-message_type='formmessage' />
+                    </div>
+                </div>
+                <br />
+                <a class="btn btn-sm btn-success" data-mode="EkleIslem" data-data1="" data-group_name='ModalForm'>+&nbsp;Ekle</a>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+

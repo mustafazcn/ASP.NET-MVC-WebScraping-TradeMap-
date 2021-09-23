@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TradeMapTicaretModelStoreContainer" CdmEntityContainer="TradeMapTicaretDB">
+    <EntitySetMapping Name="binaryProduct_Ulke_Raporu">
+      <EntityTypeMapping TypeName="TradeMapTicaretModel.binaryProduct_Ulke_Raporu">
+        <MappingFragment StoreEntitySet="binaryProduct_Ulke_Raporu">
+          <ScalarProperty Name="binaryProductID" ColumnName="binaryProductID" />
+          <ScalarProperty Name="binaryProductNo" ColumnName="binaryProductNo" />
+          <ScalarProperty Name="binaryProductYil" ColumnName="binaryProductYil" />
+          <ScalarProperty Name="binaryProductIthalat" ColumnName="binaryProductIthalat" />
+          <ScalarProperty Name="binaryProductIhracat" ColumnName="binaryProductIhracat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genel_Ulke_Raporu">
+      <EntityTypeMapping TypeName="TradeMapTicaretModel.Genel_Ulke_Raporu">
+        <MappingFragment StoreEntitySet="Genel_Ulke_Raporu">
+          <ScalarProperty Name="genelUlkeID" ColumnName="genelUlkeID" />
+          <ScalarProperty Name="UlkeID" ColumnName="UlkeID" />
+          <ScalarProperty Name="yil" ColumnName="yil" />
+          <ScalarProperty Name="IthalatUlkeID" ColumnName="IthalatUlkeID" />
+          <ScalarProperty Name="ithalat" ColumnName="ithalat" />
+          <ScalarProperty Name="IhracatUlkeID" ColumnName="IhracatUlkeID" />
+          <ScalarProperty Name="ihracat" ColumnName="ihracat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ozel_Ulke_Raporu">
+      <EntityTypeMapping TypeName="TradeMapTicaretModel.Ozel_Ulke_Raporu">
+        <MappingFragment StoreEntitySet="Ozel_Ulke_Raporu">
+          <ScalarProperty Name="ozelUlkeID" ColumnName="ozelUlkeID" />
+          <ScalarProperty Name="UlkeID" ColumnName="UlkeID" />
+          <ScalarProperty Name="yil" ColumnName="yil" />
+          <ScalarProperty Name="ithalat" ColumnName="ithalat" />
+          <ScalarProperty Name="ihracat" ColumnName="ihracat" />
+          <ScalarProperty Name="hacim" ColumnName="hacim" />
+          <ScalarProperty Name="denge" ColumnName="denge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product_Ulke_Raporu">
+      <EntityTypeMapping TypeName="TradeMapTicaretModel.Product_Ulke_Raporu">
+        <MappingFragment StoreEntitySet="Product_Ulke_Raporu">
+          <ScalarProperty Name="productID" ColumnName="productID" />
+          <ScalarProperty Name="productNo" ColumnName="productNo" />
+          <ScalarProperty Name="productYil" ColumnName="productYil" />
+          <ScalarProperty Name="productIthalat" ColumnName="productIthalat" />
+          <ScalarProperty Name="productIhracat" ColumnName="productIhracat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ulkeler">
+      <EntityTypeMapping TypeName="TradeMapTicaretModel.Ulkeler">
+        <MappingFragment StoreEntitySet="Ulkeler">
+          <ScalarProperty Name="ulkeID" ColumnName="ulkeID" />
+          <ScalarProperty Name="ulkeAd" ColumnName="ulkeAd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Base_BinaryProductUlkeRaporu">
+      <EntityTypeMapping TypeName="TradeMapTicaretModel.View_Base_BinaryProductUlkeRaporu">
+        <MappingFragment StoreEntitySet="View_Base_BinaryProductUlkeRaporu">
+          <ScalarProperty Name="binaryProductID" ColumnName="binaryProductID" />
+          <ScalarProperty Name="binaryProductNo" ColumnName="binaryProductNo" />
+          <ScalarProperty Name="binaryProductYil" ColumnName="binaryProductYil" />
+          <ScalarProperty Name="binaryProductIthalat" ColumnName="binaryProductIthalat" />
+          <ScalarProperty Name="binaryProductIhracat" ColumnName="binaryProductIhracat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Base_GenelUlkeRaporu">
+      <EntityTypeMapping TypeName="TradeMapTicaretModel.View_Base_GenelUlkeRaporu">
+        <MappingFragment StoreEntitySet="View_Base_GenelUlkeRaporu">
+          <ScalarProperty Name="genelUlkeID" ColumnName="genelUlkeID" />
+          <ScalarProperty Name="UlkeID" ColumnName="UlkeID" />
+          <ScalarProperty Name="yil" ColumnName="yil" />
+          <ScalarProperty Name="IthalatUlkeID" ColumnName="IthalatUlkeID" />
+          <ScalarProperty Name="ithalat" ColumnName="ithalat" />
+          <ScalarProperty Name="IhracatUlkeID" ColumnName="IhracatUlkeID" />
+          <ScalarProperty Name="ihracat" ColumnName="ihracat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Base_OzelUlkeRaporu">
+      <EntityTypeMapping TypeName="TradeMapTicaretModel.View_Base_OzelUlkeRaporu">
+        <MappingFragment StoreEntitySet="View_Base_OzelUlkeRaporu">
+          <ScalarProperty Name="ozelUlkeID" ColumnName="ozelUlkeID" />
+          <ScalarProperty Name="UlkeID" ColumnName="UlkeID" />
+          <ScalarProperty Name="yil" ColumnName="yil" />
+          <ScalarProperty Name="ithalat" ColumnName="ithalat" />
+          <ScalarProperty Name="ihracat" ColumnName="ihracat" />
+          <ScalarProperty Name="hacim" ColumnName="hacim" />
+          <ScalarProperty Name="denge" ColumnName="denge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Base_ProductUlkeRaporu">
+      <EntityTypeMapping TypeName="TradeMapTicaretModel.View_Base_ProductUlkeRaporu">
+        <MappingFragment StoreEntitySet="View_Base_ProductUlkeRaporu">
+          <ScalarProperty Name="productID" ColumnName="productID" />
+          <ScalarProperty Name="productNo" ColumnName="productNo" />
+          <ScalarProperty Name="productYil" ColumnName="productYil" />
+          <ScalarProperty Name="productIthalat" ColumnName="productIthalat" />
+          <ScalarProperty Name="productIhracat" ColumnName="productIhracat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Base_Ulkeler">
+      <EntityTypeMapping TypeName="TradeMapTicaretModel.View_Base_Ulkeler">
+        <MappingFragment StoreEntitySet="View_Base_Ulkeler">
+          <ScalarProperty Name="ulkeID" ColumnName="ulkeID" />
+          <ScalarProperty Name="ulkeAd" ColumnName="ulkeAd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Presentation_GenelUlke">
+      <EntityTypeMapping TypeName="TradeMapTicaretModel.View_Presentation_GenelUlke">
+        <MappingFragment StoreEntitySet="View_Presentation_GenelUlke">
+          <ScalarProperty Name="genelUlkeID" ColumnName="genelUlkeID" />
+          <ScalarProperty Name="ulkeAd" ColumnName="ulkeAd" />
+          <ScalarProperty Name="yil" ColumnName="yil" />
+          <ScalarProperty Name="IthalatUlkeAdi" ColumnName="IthalatUlkeAdi" />
+          <ScalarProperty Name="ithalat" ColumnName="ithalat" />
+          <ScalarProperty Name="IhracatUlkeAdi" ColumnName="IhracatUlkeAdi" />
+          <ScalarProperty Name="ihracat" ColumnName="ihracat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Presentation_OzelUlke">
+      <EntityTypeMapping TypeName="TradeMapTicaretModel.View_Presentation_OzelUlke">
+        <MappingFragment StoreEntitySet="View_Presentation_OzelUlke">
+          <ScalarProperty Name="ozelUlkeID" ColumnName="ozelUlkeID" />
+          <ScalarProperty Name="ulkeAd" ColumnName="ulkeAd" />
+          <ScalarProperty Name="yil" ColumnName="yil" />
+          <ScalarProperty Name="ithalat" ColumnName="ithalat" />
+          <ScalarProperty Name="ihracat" ColumnName="ihracat" />
+          <ScalarProperty Name="hacim" ColumnName="hacim" />
+          <ScalarProperty Name="denge" ColumnName="denge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Proc_GenelUlkeRapor_Islem" FunctionName="TradeMapTicaretModel.Store.Proc_GenelUlkeRapor_Islem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TradeMapTicaretModel.Proc_GenelUlkeRapor_Islem_Result">
+          <ScalarProperty Name="genelUlkeID" ColumnName="genelUlkeID" />
+          <ScalarProperty Name="ulkeAd" ColumnName="ulkeAd" />
+          <ScalarProperty Name="yil" ColumnName="yil" />
+          <ScalarProperty Name="IthalatUlkeAdi" ColumnName="IthalatUlkeAdi" />
+          <ScalarProperty Name="ithalat" ColumnName="ithalat" />
+          <ScalarProperty Name="IhracatUlkeAdi" ColumnName="IhracatUlkeAdi" />
+          <ScalarProperty Name="ihracat" ColumnName="ihracat" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_OzelUlkeRapor_Islem" FunctionName="TradeMapTicaretModel.Store.Proc_OzelUlkeRapor_Islem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TradeMapTicaretModel.Proc_OzelUlkeRapor_Islem_Result">
+          <ScalarProperty Name="ozelUlkeID" ColumnName="ozelUlkeID" />
+          <ScalarProperty Name="ulkeAd" ColumnName="ulkeAd" />
+          <ScalarProperty Name="yil" ColumnName="yil" />
+          <ScalarProperty Name="ithalat" ColumnName="ithalat" />
+          <ScalarProperty Name="ihracat" ColumnName="ihracat" />
+          <ScalarProperty Name="hacim" ColumnName="hacim" />
+          <ScalarProperty Name="denge" ColumnName="denge" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,615 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TradeMapTicaretModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="binaryProduct_Ulke_Raporu">
+          <Key>
+            <PropertyRef Name="binaryProductID" />
+          </Key>
+          <Property Name="binaryProductID" Type="int" Nullable="false" />
+          <Property Name="binaryProductNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="binaryProductYil" Type="nvarchar" MaxLength="4" />
+          <Property Name="binaryProductIthalat" Type="nvarchar" MaxLength="100" />
+          <Property Name="binaryProductIhracat" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Genel_Ulke_Raporu">
+          <Key>
+            <PropertyRef Name="genelUlkeID" />
+          </Key>
+          <Property Name="genelUlkeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UlkeID" Type="int" />
+          <Property Name="yil" Type="nvarchar" MaxLength="6" />
+          <Property Name="IthalatUlkeID" Type="int" />
+          <Property Name="ithalat" Type="bigint" />
+          <Property Name="IhracatUlkeID" Type="int" />
+          <Property Name="ihracat" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Ozel_Ulke_Raporu">
+          <Key>
+            <PropertyRef Name="ozelUlkeID" />
+          </Key>
+          <Property Name="ozelUlkeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UlkeID" Type="int" />
+          <Property Name="yil" Type="nvarchar" MaxLength="6" />
+          <Property Name="ithalat" Type="bigint" />
+          <Property Name="ihracat" Type="bigint" />
+          <Property Name="hacim" Type="bigint" />
+          <Property Name="denge" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Product_Ulke_Raporu">
+          <Key>
+            <PropertyRef Name="productID" />
+          </Key>
+          <Property Name="productID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="productYil" Type="nvarchar" MaxLength="4" />
+          <Property Name="productIthalat" Type="nvarchar" MaxLength="100" />
+          <Property Name="productIhracat" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Ulkeler">
+          <Key>
+            <PropertyRef Name="ulkeID" />
+          </Key>
+          <Property Name="ulkeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ulkeAd" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TradeMapTicaret.dbo.View_Base_BinaryProductUlkeRaporu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Base_BinaryProductUlkeRaporu">
+          <Key>
+            <PropertyRef Name="binaryProductID" />
+          </Key>
+          <Property Name="binaryProductID" Type="int" Nullable="false" />
+          <Property Name="binaryProductNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="binaryProductYil" Type="nvarchar" MaxLength="4" />
+          <Property Name="binaryProductIthalat" Type="nvarchar" MaxLength="100" />
+          <Property Name="binaryProductIhracat" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TradeMapTicaret.dbo.View_Base_GenelUlkeRaporu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Base_GenelUlkeRaporu">
+          <Key>
+            <PropertyRef Name="genelUlkeID" />
+          </Key>
+          <Property Name="genelUlkeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UlkeID" Type="int" />
+          <Property Name="yil" Type="nvarchar" MaxLength="6" />
+          <Property Name="IthalatUlkeID" Type="int" />
+          <Property Name="ithalat" Type="int" />
+          <Property Name="IhracatUlkeID" Type="int" />
+          <Property Name="ihracat" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TradeMapTicaret.dbo.View_Base_OzelUlkeRaporu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Base_OzelUlkeRaporu">
+          <Key>
+            <PropertyRef Name="ozelUlkeID" />
+          </Key>
+          <Property Name="ozelUlkeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UlkeID" Type="int" />
+          <Property Name="yil" Type="nvarchar" MaxLength="6" />
+          <Property Name="ithalat" Type="int" />
+          <Property Name="ihracat" Type="int" />
+          <Property Name="hacim" Type="int" />
+          <Property Name="denge" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TradeMapTicaret.dbo.View_Base_ProductUlkeRaporu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Base_ProductUlkeRaporu">
+          <Key>
+            <PropertyRef Name="productID" />
+          </Key>
+          <Property Name="productID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="productYil" Type="nvarchar" MaxLength="4" />
+          <Property Name="productIthalat" Type="nvarchar" MaxLength="100" />
+          <Property Name="productIhracat" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TradeMapTicaret.dbo.View_Base_Ulkeler' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Base_Ulkeler">
+          <Key>
+            <PropertyRef Name="ulkeID" />
+          </Key>
+          <Property Name="ulkeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ulkeAd" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TradeMapTicaret.dbo.View_Presentation_GenelUlke' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Presentation_GenelUlke">
+          <Key>
+            <PropertyRef Name="genelUlkeID" />
+          </Key>
+          <Property Name="genelUlkeID" Type="int" Nullable="false" />
+          <Property Name="ulkeAd" Type="nvarchar" MaxLength="100" />
+          <Property Name="yil" Type="nvarchar" MaxLength="6" />
+          <Property Name="IthalatUlkeAdi" Type="nvarchar" MaxLength="100" />
+          <Property Name="ithalat" Type="bigint" />
+          <Property Name="IhracatUlkeAdi" Type="nvarchar" MaxLength="100" />
+          <Property Name="ihracat" Type="bigint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TradeMapTicaret.dbo.View_Presentation_OzelUlke' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Presentation_OzelUlke">
+          <Key>
+            <PropertyRef Name="ozelUlkeID" />
+          </Key>
+          <Property Name="ozelUlkeID" Type="int" Nullable="false" />
+          <Property Name="ulkeAd" Type="nvarchar" MaxLength="100" />
+          <Property Name="yil" Type="nvarchar" MaxLength="6" />
+          <Property Name="ithalat" Type="bigint" />
+          <Property Name="ihracat" Type="bigint" />
+          <Property Name="hacim" Type="bigint" />
+          <Property Name="denge" Type="bigint" />
+        </EntityType>
+        <Function Name="Proc_GenelUlkeRapor_Islem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Islem" Type="nvarchar" Mode="In" />
+          <Parameter Name="ulkeAd" Type="nvarchar" Mode="In" />
+          <Parameter Name="yil" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ithalat_ulkeAd" Type="nvarchar" Mode="In" />
+          <Parameter Name="ithalat" Type="bigint" Mode="In" />
+          <Parameter Name="Ihracat_ulkeAd" Type="nvarchar" Mode="In" />
+          <Parameter Name="ihracat" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="Proc_OzelUlkeRapor_Islem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Islem" Type="nvarchar" Mode="In" />
+          <Parameter Name="ulkeAd" Type="nvarchar" Mode="In" />
+          <Parameter Name="yil" Type="nvarchar" Mode="In" />
+          <Parameter Name="ithalat" Type="bigint" Mode="In" />
+          <Parameter Name="ihracat" Type="bigint" Mode="In" />
+          <Parameter Name="hacim" Type="bigint" Mode="In" />
+          <Parameter Name="denge" Type="bigint" Mode="In" />
+        </Function>
+        <EntityContainer Name="TradeMapTicaretModelStoreContainer">
+          <EntitySet Name="binaryProduct_Ulke_Raporu" EntityType="Self.binaryProduct_Ulke_Raporu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Genel_Ulke_Raporu" EntityType="Self.Genel_Ulke_Raporu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ozel_Ulke_Raporu" EntityType="Self.Ozel_Ulke_Raporu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product_Ulke_Raporu" EntityType="Self.Product_Ulke_Raporu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ulkeler" EntityType="Self.Ulkeler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="View_Base_BinaryProductUlkeRaporu" EntityType="Self.View_Base_BinaryProductUlkeRaporu" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Base_BinaryProductUlkeRaporu].[binaryProductID] AS [binaryProductID], 
+    [View_Base_BinaryProductUlkeRaporu].[binaryProductNo] AS [binaryProductNo], 
+    [View_Base_BinaryProductUlkeRaporu].[binaryProductYil] AS [binaryProductYil], 
+    [View_Base_BinaryProductUlkeRaporu].[binaryProductIthalat] AS [binaryProductIthalat], 
+    [View_Base_BinaryProductUlkeRaporu].[binaryProductIhracat] AS [binaryProductIhracat]
+    FROM [dbo].[View_Base_BinaryProductUlkeRaporu] AS [View_Base_BinaryProductUlkeRaporu]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Base_GenelUlkeRaporu" EntityType="Self.View_Base_GenelUlkeRaporu" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Base_GenelUlkeRaporu].[genelUlkeID] AS [genelUlkeID], 
+    [View_Base_GenelUlkeRaporu].[UlkeID] AS [UlkeID], 
+    [View_Base_GenelUlkeRaporu].[yil] AS [yil], 
+    [View_Base_GenelUlkeRaporu].[IthalatUlkeID] AS [IthalatUlkeID], 
+    [View_Base_GenelUlkeRaporu].[ithalat] AS [ithalat], 
+    [View_Base_GenelUlkeRaporu].[IhracatUlkeID] AS [IhracatUlkeID], 
+    [View_Base_GenelUlkeRaporu].[ihracat] AS [ihracat]
+    FROM [dbo].[View_Base_GenelUlkeRaporu] AS [View_Base_GenelUlkeRaporu]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Base_OzelUlkeRaporu" EntityType="Self.View_Base_OzelUlkeRaporu" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Base_OzelUlkeRaporu].[ozelUlkeID] AS [ozelUlkeID], 
+    [View_Base_OzelUlkeRaporu].[UlkeID] AS [UlkeID], 
+    [View_Base_OzelUlkeRaporu].[yil] AS [yil], 
+    [View_Base_OzelUlkeRaporu].[ithalat] AS [ithalat], 
+    [View_Base_OzelUlkeRaporu].[ihracat] AS [ihracat], 
+    [View_Base_OzelUlkeRaporu].[hacim] AS [hacim], 
+    [View_Base_OzelUlkeRaporu].[denge] AS [denge]
+    FROM [dbo].[View_Base_OzelUlkeRaporu] AS [View_Base_OzelUlkeRaporu]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Base_ProductUlkeRaporu" EntityType="Self.View_Base_ProductUlkeRaporu" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Base_ProductUlkeRaporu].[productID] AS [productID], 
+    [View_Base_ProductUlkeRaporu].[productNo] AS [productNo], 
+    [View_Base_ProductUlkeRaporu].[productYil] AS [productYil], 
+    [View_Base_ProductUlkeRaporu].[productIthalat] AS [productIthalat], 
+    [View_Base_ProductUlkeRaporu].[productIhracat] AS [productIhracat]
+    FROM [dbo].[View_Base_ProductUlkeRaporu] AS [View_Base_ProductUlkeRaporu]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Base_Ulkeler" EntityType="Self.View_Base_Ulkeler" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Base_Ulkeler].[ulkeID] AS [ulkeID], 
+    [View_Base_Ulkeler].[ulkeAd] AS [ulkeAd]
+    FROM [dbo].[View_Base_Ulkeler] AS [View_Base_Ulkeler]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Presentation_GenelUlke" EntityType="Self.View_Presentation_GenelUlke" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Presentation_GenelUlke].[genelUlkeID] AS [genelUlkeID], 
+    [View_Presentation_GenelUlke].[ulkeAd] AS [ulkeAd], 
+    [View_Presentation_GenelUlke].[yil] AS [yil], 
+    [View_Presentation_GenelUlke].[IthalatUlkeAdi] AS [IthalatUlkeAdi], 
+    [View_Presentation_GenelUlke].[ithalat] AS [ithalat], 
+    [View_Presentation_GenelUlke].[IhracatUlkeAdi] AS [IhracatUlkeAdi], 
+    [View_Presentation_GenelUlke].[ihracat] AS [ihracat]
+    FROM [dbo].[View_Presentation_GenelUlke] AS [View_Presentation_GenelUlke]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Presentation_OzelUlke" EntityType="Self.View_Presentation_OzelUlke" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Presentation_OzelUlke].[ozelUlkeID] AS [ozelUlkeID], 
+    [View_Presentation_OzelUlke].[ulkeAd] AS [ulkeAd], 
+    [View_Presentation_OzelUlke].[yil] AS [yil], 
+    [View_Presentation_OzelUlke].[ithalat] AS [ithalat], 
+    [View_Presentation_OzelUlke].[ihracat] AS [ihracat], 
+    [View_Presentation_OzelUlke].[hacim] AS [hacim], 
+    [View_Presentation_OzelUlke].[denge] AS [denge]
+    FROM [dbo].[View_Presentation_OzelUlke] AS [View_Presentation_OzelUlke]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TradeMapTicaretModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="binaryProduct_Ulke_Raporu">
+          <Key>
+            <PropertyRef Name="binaryProductID" />
+          </Key>
+          <Property Name="binaryProductID" Type="Int32" Nullable="false" />
+          <Property Name="binaryProductNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="binaryProductYil" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="binaryProductIthalat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="binaryProductIhracat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Genel_Ulke_Raporu">
+          <Key>
+            <PropertyRef Name="genelUlkeID" />
+          </Key>
+          <Property Name="genelUlkeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UlkeID" Type="Int32" />
+          <Property Name="yil" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="IthalatUlkeID" Type="Int32" />
+          <Property Name="ithalat" Type="Int64" />
+          <Property Name="IhracatUlkeID" Type="Int32" />
+          <Property Name="ihracat" Type="Int64" />
+        </EntityType>
+        <EntityType Name="Ozel_Ulke_Raporu">
+          <Key>
+            <PropertyRef Name="ozelUlkeID" />
+          </Key>
+          <Property Name="ozelUlkeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UlkeID" Type="Int32" />
+          <Property Name="yil" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="ithalat" Type="Int64" />
+          <Property Name="ihracat" Type="Int64" />
+          <Property Name="hacim" Type="Int64" />
+          <Property Name="denge" Type="Int64" />
+        </EntityType>
+        <EntityType Name="Product_Ulke_Raporu">
+          <Key>
+            <PropertyRef Name="productID" />
+          </Key>
+          <Property Name="productID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="productYil" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="productIthalat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="productIhracat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ulkeler">
+          <Key>
+            <PropertyRef Name="ulkeID" />
+          </Key>
+          <Property Name="ulkeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ulkeAd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_Base_BinaryProductUlkeRaporu">
+          <Key>
+            <PropertyRef Name="binaryProductID" />
+          </Key>
+          <Property Name="binaryProductID" Type="Int32" Nullable="false" />
+          <Property Name="binaryProductNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="binaryProductYil" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="binaryProductIthalat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="binaryProductIhracat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_Base_GenelUlkeRaporu">
+          <Key>
+            <PropertyRef Name="genelUlkeID" />
+          </Key>
+          <Property Name="genelUlkeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UlkeID" Type="Int32" />
+          <Property Name="yil" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="IthalatUlkeID" Type="Int32" />
+          <Property Name="ithalat" Type="Int32" />
+          <Property Name="IhracatUlkeID" Type="Int32" />
+          <Property Name="ihracat" Type="Int32" />
+        </EntityType>
+        <EntityType Name="View_Base_OzelUlkeRaporu">
+          <Key>
+            <PropertyRef Name="ozelUlkeID" />
+          </Key>
+          <Property Name="ozelUlkeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UlkeID" Type="Int32" />
+          <Property Name="yil" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="ithalat" Type="Int32" />
+          <Property Name="ihracat" Type="Int32" />
+          <Property Name="hacim" Type="Int32" />
+          <Property Name="denge" Type="Int32" />
+        </EntityType>
+        <EntityType Name="View_Base_ProductUlkeRaporu">
+          <Key>
+            <PropertyRef Name="productID" />
+          </Key>
+          <Property Name="productID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="productYil" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="productIthalat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="productIhracat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_Base_Ulkeler">
+          <Key>
+            <PropertyRef Name="ulkeID" />
+          </Key>
+          <Property Name="ulkeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ulkeAd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_Presentation_GenelUlke">
+          <Key>
+            <PropertyRef Name="genelUlkeID" />
+          </Key>
+          <Property Name="genelUlkeID" Type="Int32" Nullable="false" />
+          <Property Name="ulkeAd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="yil" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="IthalatUlkeAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ithalat" Type="Int64" />
+          <Property Name="IhracatUlkeAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ihracat" Type="Int64" />
+        </EntityType>
+        <EntityType Name="View_Presentation_OzelUlke">
+          <Key>
+            <PropertyRef Name="ozelUlkeID" />
+          </Key>
+          <Property Name="ozelUlkeID" Type="Int32" Nullable="false" />
+          <Property Name="ulkeAd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="yil" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="ithalat" Type="Int64" />
+          <Property Name="ihracat" Type="Int64" />
+          <Property Name="hacim" Type="Int64" />
+          <Property Name="denge" Type="Int64" />
+        </EntityType>
+        <EntityContainer Name="TradeMapTicaretDB" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="binaryProduct_Ulke_Raporu" EntityType="Self.binaryProduct_Ulke_Raporu" />
+          <EntitySet Name="Genel_Ulke_Raporu" EntityType="Self.Genel_Ulke_Raporu" />
+          <EntitySet Name="Ozel_Ulke_Raporu" EntityType="Self.Ozel_Ulke_Raporu" />
+          <EntitySet Name="Product_Ulke_Raporu" EntityType="Self.Product_Ulke_Raporu" />
+          <EntitySet Name="Ulkeler" EntityType="Self.Ulkeler" />
+          <EntitySet Name="View_Base_BinaryProductUlkeRaporu" EntityType="Self.View_Base_BinaryProductUlkeRaporu" />
+          <EntitySet Name="View_Base_GenelUlkeRaporu" EntityType="Self.View_Base_GenelUlkeRaporu" />
+          <EntitySet Name="View_Base_OzelUlkeRaporu" EntityType="Self.View_Base_OzelUlkeRaporu" />
+          <EntitySet Name="View_Base_ProductUlkeRaporu" EntityType="Self.View_Base_ProductUlkeRaporu" />
+          <EntitySet Name="View_Base_Ulkeler" EntityType="Self.View_Base_Ulkeler" />
+          <EntitySet Name="View_Presentation_GenelUlke" EntityType="Self.View_Presentation_GenelUlke" />
+          <EntitySet Name="View_Presentation_OzelUlke" EntityType="Self.View_Presentation_OzelUlke" />
+          <FunctionImport Name="Proc_GenelUlkeRapor_Islem" ReturnType="Collection(TradeMapTicaretModel.Proc_GenelUlkeRapor_Islem_Result)">
+            <Parameter Name="Islem" Mode="In" Type="String" />
+            <Parameter Name="ulkeAd" Mode="In" Type="String" />
+            <Parameter Name="yil" Mode="In" Type="String" />
+            <Parameter Name="Ithalat_ulkeAd" Mode="In" Type="String" />
+            <Parameter Name="ithalat" Mode="In" Type="Int64" />
+            <Parameter Name="Ihracat_ulkeAd" Mode="In" Type="String" />
+            <Parameter Name="ihracat" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="Proc_OzelUlkeRapor_Islem" ReturnType="Collection(TradeMapTicaretModel.Proc_OzelUlkeRapor_Islem_Result)">
+            <Parameter Name="Islem" Mode="In" Type="String" />
+            <Parameter Name="ulkeAd" Mode="In" Type="String" />
+            <Parameter Name="yil" Mode="In" Type="String" />
+            <Parameter Name="ithalat" Mode="In" Type="Int64" />
+            <Parameter Name="ihracat" Mode="In" Type="Int64" />
+            <Parameter Name="hacim" Mode="In" Type="Int64" />
+            <Parameter Name="denge" Mode="In" Type="Int64" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="Proc_GenelUlkeRapor_Islem_Result">
+          <Property Type="Int32" Name="genelUlkeID" Nullable="false" />
+          <Property Type="String" Name="ulkeAd" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="yil" Nullable="true" MaxLength="6" />
+          <Property Type="String" Name="IthalatUlkeAdi" Nullable="true" MaxLength="100" />
+          <Property Type="Int64" Name="ithalat" Nullable="true" />
+          <Property Type="String" Name="IhracatUlkeAdi" Nullable="true" MaxLength="100" />
+          <Property Type="Int64" Name="ihracat" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Proc_OzelUlkeRapor_Islem_Result">
+          <Property Type="Int32" Name="ozelUlkeID" Nullable="false" />
+          <Property Type="String" Name="ulkeAd" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="yil" Nullable="true" MaxLength="6" />
+          <Property Type="Int64" Name="ithalat" Nullable="true" />
+          <Property Type="Int64" Name="ihracat" Nullable="true" />
+          <Property Type="Int64" Name="hacim" Nullable="true" />
+          <Property Type="Int64" Name="denge" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TradeMapTicaretModelStoreContainer" CdmEntityContainer="TradeMapTicaretDB">
+          <EntitySetMapping Name="binaryProduct_Ulke_Raporu">
+            <EntityTypeMapping TypeName="TradeMapTicaretModel.binaryProduct_Ulke_Raporu">
+              <MappingFragment StoreEntitySet="binaryProduct_Ulke_Raporu">
+                <ScalarProperty Name="binaryProductID" ColumnName="binaryProductID" />
+                <ScalarProperty Name="binaryProductNo" ColumnName="binaryProductNo" />
+                <ScalarProperty Name="binaryProductYil" ColumnName="binaryProductYil" />
+                <ScalarProperty Name="binaryProductIthalat" ColumnName="binaryProductIthalat" />
+                <ScalarProperty Name="binaryProductIhracat" ColumnName="binaryProductIhracat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genel_Ulke_Raporu">
+            <EntityTypeMapping TypeName="TradeMapTicaretModel.Genel_Ulke_Raporu">
+              <MappingFragment StoreEntitySet="Genel_Ulke_Raporu">
+                <ScalarProperty Name="genelUlkeID" ColumnName="genelUlkeID" />
+                <ScalarProperty Name="UlkeID" ColumnName="UlkeID" />
+                <ScalarProperty Name="yil" ColumnName="yil" />
+                <ScalarProperty Name="IthalatUlkeID" ColumnName="IthalatUlkeID" />
+                <ScalarProperty Name="ithalat" ColumnName="ithalat" />
+                <ScalarProperty Name="IhracatUlkeID" ColumnName="IhracatUlkeID" />
+                <ScalarProperty Name="ihracat" ColumnName="ihracat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ozel_Ulke_Raporu">
+            <EntityTypeMapping TypeName="TradeMapTicaretModel.Ozel_Ulke_Raporu">
+              <MappingFragment StoreEntitySet="Ozel_Ulke_Raporu">
+                <ScalarProperty Name="ozelUlkeID" ColumnName="ozelUlkeID" />
+                <ScalarProperty Name="UlkeID" ColumnName="UlkeID" />
+                <ScalarProperty Name="yil" ColumnName="yil" />
+                <ScalarProperty Name="ithalat" ColumnName="ithalat" />
+                <ScalarProperty Name="ihracat" ColumnName="ihracat" />
+                <ScalarProperty Name="hacim" ColumnName="hacim" />
+                <ScalarProperty Name="denge" ColumnName="denge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product_Ulke_Raporu">
+            <EntityTypeMapping TypeName="TradeMapTicaretModel.Product_Ulke_Raporu">
+              <MappingFragment StoreEntitySet="Product_Ulke_Raporu">
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="productNo" ColumnName="productNo" />
+                <ScalarProperty Name="productYil" ColumnName="productYil" />
+                <ScalarProperty Name="productIthalat" ColumnName="productIthalat" />
+                <ScalarProperty Name="productIhracat" ColumnName="productIhracat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ulkeler">
+            <EntityTypeMapping TypeName="TradeMapTicaretModel.Ulkeler">
+              <MappingFragment StoreEntitySet="Ulkeler">
+                <ScalarProperty Name="ulkeID" ColumnName="ulkeID" />
+                <ScalarProperty Name="ulkeAd" ColumnName="ulkeAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Base_BinaryProductUlkeRaporu">
+            <EntityTypeMapping TypeName="TradeMapTicaretModel.View_Base_BinaryProductUlkeRaporu">
+              <MappingFragment StoreEntitySet="View_Base_BinaryProductUlkeRaporu">
+                <ScalarProperty Name="binaryProductID" ColumnName="binaryProductID" />
+                <ScalarProperty Name="binaryProductNo" ColumnName="binaryProductNo" />
+                <ScalarProperty Name="binaryProductYil" ColumnName="binaryProductYil" />
+                <ScalarProperty Name="binaryProductIthalat" ColumnName="binaryProductIthalat" />
+                <ScalarProperty Name="binaryProductIhracat" ColumnName="binaryProductIhracat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Base_GenelUlkeRaporu">
+            <EntityTypeMapping TypeName="TradeMapTicaretModel.View_Base_GenelUlkeRaporu">
+              <MappingFragment StoreEntitySet="View_Base_GenelUlkeRaporu">
+                <ScalarProperty Name="genelUlkeID" ColumnName="genelUlkeID" />
+                <ScalarProperty Name="UlkeID" ColumnName="UlkeID" />
+                <ScalarProperty Name="yil" ColumnName="yil" />
+                <ScalarProperty Name="IthalatUlkeID" ColumnName="IthalatUlkeID" />
+                <ScalarProperty Name="ithalat" ColumnName="ithalat" />
+                <ScalarProperty Name="IhracatUlkeID" ColumnName="IhracatUlkeID" />
+                <ScalarProperty Name="ihracat" ColumnName="ihracat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Base_OzelUlkeRaporu">
+            <EntityTypeMapping TypeName="TradeMapTicaretModel.View_Base_OzelUlkeRaporu">
+              <MappingFragment StoreEntitySet="View_Base_OzelUlkeRaporu">
+                <ScalarProperty Name="ozelUlkeID" ColumnName="ozelUlkeID" />
+                <ScalarProperty Name="UlkeID" ColumnName="UlkeID" />
+                <ScalarProperty Name="yil" ColumnName="yil" />
+                <ScalarProperty Name="ithalat" ColumnName="ithalat" />
+                <ScalarProperty Name="ihracat" ColumnName="ihracat" />
+                <ScalarProperty Name="hacim" ColumnName="hacim" />
+                <ScalarProperty Name="denge" ColumnName="denge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Base_ProductUlkeRaporu">
+            <EntityTypeMapping TypeName="TradeMapTicaretModel.View_Base_ProductUlkeRaporu">
+              <MappingFragment StoreEntitySet="View_Base_ProductUlkeRaporu">
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="productNo" ColumnName="productNo" />
+                <ScalarProperty Name="productYil" ColumnName="productYil" />
+                <ScalarProperty Name="productIthalat" ColumnName="productIthalat" />
+                <ScalarProperty Name="productIhracat" ColumnName="productIhracat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Base_Ulkeler">
+            <EntityTypeMapping TypeName="TradeMapTicaretModel.View_Base_Ulkeler">
+              <MappingFragment StoreEntitySet="View_Base_Ulkeler">
+                <ScalarProperty Name="ulkeID" ColumnName="ulkeID" />
+                <ScalarProperty Name="ulkeAd" ColumnName="ulkeAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Presentation_GenelUlke">
+            <EntityTypeMapping TypeName="TradeMapTicaretModel.View_Presentation_GenelUlke">
+              <MappingFragment StoreEntitySet="View_Presentation_GenelUlke">
+                <ScalarProperty Name="genelUlkeID" ColumnName="genelUlkeID" />
+                <ScalarProperty Name="ulkeAd" ColumnName="ulkeAd" />
+                <ScalarProperty Name="yil" ColumnName="yil" />
+                <ScalarProperty Name="IthalatUlkeAdi" ColumnName="IthalatUlkeAdi" />
+                <ScalarProperty Name="ithalat" ColumnName="ithalat" />
+                <ScalarProperty Name="IhracatUlkeAdi" ColumnName="IhracatUlkeAdi" />
+                <ScalarProperty Name="ihracat" ColumnName="ihracat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Presentation_OzelUlke">
+            <EntityTypeMapping TypeName="TradeMapTicaretModel.View_Presentation_OzelUlke">
+              <MappingFragment StoreEntitySet="View_Presentation_OzelUlke">
+                <ScalarProperty Name="ozelUlkeID" ColumnName="ozelUlkeID" />
+                <ScalarProperty Name="ulkeAd" ColumnName="ulkeAd" />
+                <ScalarProperty Name="yil" ColumnName="yil" />
+                <ScalarProperty Name="ithalat" ColumnName="ithalat" />
+                <ScalarProperty Name="ihracat" ColumnName="ihracat" />
+                <ScalarProperty Name="hacim" ColumnName="hacim" />
+                <ScalarProperty Name="denge" ColumnName="denge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Proc_GenelUlkeRapor_Islem" FunctionName="TradeMapTicaretModel.Store.Proc_GenelUlkeRapor_Islem">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TradeMapTicaretModel.Proc_GenelUlkeRapor_Islem_Result">
+                <ScalarProperty Name="genelUlkeID" ColumnName="genelUlkeID" />
+                <ScalarProperty Name="ulkeAd" ColumnName="ulkeAd" />
+                <ScalarProperty Name="yil" ColumnName="yil" />
+                <ScalarProperty Name="IthalatUlkeAdi" ColumnName="IthalatUlkeAdi" />
+                <ScalarProperty Name="ithalat" ColumnName="ithalat" />
+                <ScalarProperty Name="IhracatUlkeAdi" ColumnName="IhracatUlkeAdi" />
+                <ScalarProperty Name="ihracat" ColumnName="ihracat" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Proc_OzelUlkeRapor_Islem" FunctionName="TradeMapTicaretModel.Store.Proc_OzelUlkeRapor_Islem">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TradeMapTicaretModel.Proc_OzelUlkeRapor_Islem_Result">
+                <ScalarProperty Name="ozelUlkeID" ColumnName="ozelUlkeID" />
+                <ScalarProperty Name="ulkeAd" ColumnName="ulkeAd" />
+                <ScalarProperty Name="yil" ColumnName="yil" />
+                <ScalarProperty Name="ithalat" ColumnName="ithalat" />
+                <ScalarProperty Name="ihracat" ColumnName="ihracat" />
+                <ScalarProperty Name="hacim" ColumnName="hacim" />
+                <ScalarProperty Name="denge" ColumnName="denge" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

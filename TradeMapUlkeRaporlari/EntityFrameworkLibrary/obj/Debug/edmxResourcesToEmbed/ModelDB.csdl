@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TradeMapTicaretModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="binaryProduct_Ulke_Raporu">
+    <Key>
+      <PropertyRef Name="binaryProductID" />
+    </Key>
+    <Property Name="binaryProductID" Type="Int32" Nullable="false" />
+    <Property Name="binaryProductNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="binaryProductYil" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="binaryProductIthalat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="binaryProductIhracat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Genel_Ulke_Raporu">
+    <Key>
+      <PropertyRef Name="genelUlkeID" />
+    </Key>
+    <Property Name="genelUlkeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UlkeID" Type="Int32" />
+    <Property Name="yil" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="IthalatUlkeID" Type="Int32" />
+    <Property Name="ithalat" Type="Int64" />
+    <Property Name="IhracatUlkeID" Type="Int32" />
+    <Property Name="ihracat" Type="Int64" />
+  </EntityType>
+  <EntityType Name="Ozel_Ulke_Raporu">
+    <Key>
+      <PropertyRef Name="ozelUlkeID" />
+    </Key>
+    <Property Name="ozelUlkeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UlkeID" Type="Int32" />
+    <Property Name="yil" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="ithalat" Type="Int64" />
+    <Property Name="ihracat" Type="Int64" />
+    <Property Name="hacim" Type="Int64" />
+    <Property Name="denge" Type="Int64" />
+  </EntityType>
+  <EntityType Name="Product_Ulke_Raporu">
+    <Key>
+      <PropertyRef Name="productID" />
+    </Key>
+    <Property Name="productID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="productYil" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="productIthalat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="productIhracat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Ulkeler">
+    <Key>
+      <PropertyRef Name="ulkeID" />
+    </Key>
+    <Property Name="ulkeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ulkeAd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_Base_BinaryProductUlkeRaporu">
+    <Key>
+      <PropertyRef Name="binaryProductID" />
+    </Key>
+    <Property Name="binaryProductID" Type="Int32" Nullable="false" />
+    <Property Name="binaryProductNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="binaryProductYil" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="binaryProductIthalat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="binaryProductIhracat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_Base_GenelUlkeRaporu">
+    <Key>
+      <PropertyRef Name="genelUlkeID" />
+    </Key>
+    <Property Name="genelUlkeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UlkeID" Type="Int32" />
+    <Property Name="yil" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="IthalatUlkeID" Type="Int32" />
+    <Property Name="ithalat" Type="Int32" />
+    <Property Name="IhracatUlkeID" Type="Int32" />
+    <Property Name="ihracat" Type="Int32" />
+  </EntityType>
+  <EntityType Name="View_Base_OzelUlkeRaporu">
+    <Key>
+      <PropertyRef Name="ozelUlkeID" />
+    </Key>
+    <Property Name="ozelUlkeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UlkeID" Type="Int32" />
+    <Property Name="yil" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="ithalat" Type="Int32" />
+    <Property Name="ihracat" Type="Int32" />
+    <Property Name="hacim" Type="Int32" />
+    <Property Name="denge" Type="Int32" />
+  </EntityType>
+  <EntityType Name="View_Base_ProductUlkeRaporu">
+    <Key>
+      <PropertyRef Name="productID" />
+    </Key>
+    <Property Name="productID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="productYil" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="productIthalat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="productIhracat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_Base_Ulkeler">
+    <Key>
+      <PropertyRef Name="ulkeID" />
+    </Key>
+    <Property Name="ulkeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ulkeAd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_Presentation_GenelUlke">
+    <Key>
+      <PropertyRef Name="genelUlkeID" />
+    </Key>
+    <Property Name="genelUlkeID" Type="Int32" Nullable="false" />
+    <Property Name="ulkeAd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="yil" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="IthalatUlkeAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ithalat" Type="Int64" />
+    <Property Name="IhracatUlkeAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ihracat" Type="Int64" />
+  </EntityType>
+  <EntityType Name="View_Presentation_OzelUlke">
+    <Key>
+      <PropertyRef Name="ozelUlkeID" />
+    </Key>
+    <Property Name="ozelUlkeID" Type="Int32" Nullable="false" />
+    <Property Name="ulkeAd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="yil" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="ithalat" Type="Int64" />
+    <Property Name="ihracat" Type="Int64" />
+    <Property Name="hacim" Type="Int64" />
+    <Property Name="denge" Type="Int64" />
+  </EntityType>
+  <EntityContainer Name="TradeMapTicaretDB" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="binaryProduct_Ulke_Raporu" EntityType="Self.binaryProduct_Ulke_Raporu" />
+    <EntitySet Name="Genel_Ulke_Raporu" EntityType="Self.Genel_Ulke_Raporu" />
+    <EntitySet Name="Ozel_Ulke_Raporu" EntityType="Self.Ozel_Ulke_Raporu" />
+    <EntitySet Name="Product_Ulke_Raporu" EntityType="Self.Product_Ulke_Raporu" />
+    <EntitySet Name="Ulkeler" EntityType="Self.Ulkeler" />
+    <EntitySet Name="View_Base_BinaryProductUlkeRaporu" EntityType="Self.View_Base_BinaryProductUlkeRaporu" />
+    <EntitySet Name="View_Base_GenelUlkeRaporu" EntityType="Self.View_Base_GenelUlkeRaporu" />
+    <EntitySet Name="View_Base_OzelUlkeRaporu" EntityType="Self.View_Base_OzelUlkeRaporu" />
+    <EntitySet Name="View_Base_ProductUlkeRaporu" EntityType="Self.View_Base_ProductUlkeRaporu" />
+    <EntitySet Name="View_Base_Ulkeler" EntityType="Self.View_Base_Ulkeler" />
+    <EntitySet Name="View_Presentation_GenelUlke" EntityType="Self.View_Presentation_GenelUlke" />
+    <EntitySet Name="View_Presentation_OzelUlke" EntityType="Self.View_Presentation_OzelUlke" />
+    <FunctionImport Name="Proc_GenelUlkeRapor_Islem" ReturnType="Collection(TradeMapTicaretModel.Proc_GenelUlkeRapor_Islem_Result)">
+      <Parameter Name="Islem" Mode="In" Type="String" />
+      <Parameter Name="ulkeAd" Mode="In" Type="String" />
+      <Parameter Name="yil" Mode="In" Type="String" />
+      <Parameter Name="Ithalat_ulkeAd" Mode="In" Type="String" />
+      <Parameter Name="ithalat" Mode="In" Type="Int64" />
+      <Parameter Name="Ihracat_ulkeAd" Mode="In" Type="String" />
+      <Parameter Name="ihracat" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="Proc_OzelUlkeRapor_Islem" ReturnType="Collection(TradeMapTicaretModel.Proc_OzelUlkeRapor_Islem_Result)">
+      <Parameter Name="Islem" Mode="In" Type="String" />
+      <Parameter Name="ulkeAd" Mode="In" Type="String" />
+      <Parameter Name="yil" Mode="In" Type="String" />
+      <Parameter Name="ithalat" Mode="In" Type="Int64" />
+      <Parameter Name="ihracat" Mode="In" Type="Int64" />
+      <Parameter Name="hacim" Mode="In" Type="Int64" />
+      <Parameter Name="denge" Mode="In" Type="Int64" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="Proc_GenelUlkeRapor_Islem_Result">
+    <Property Type="Int32" Name="genelUlkeID" Nullable="false" />
+    <Property Type="String" Name="ulkeAd" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="yil" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="IthalatUlkeAdi" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="ithalat" Nullable="true" />
+    <Property Type="String" Name="IhracatUlkeAdi" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="ihracat" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Proc_OzelUlkeRapor_Islem_Result">
+    <Property Type="Int32" Name="ozelUlkeID" Nullable="false" />
+    <Property Type="String" Name="ulkeAd" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="yil" Nullable="true" MaxLength="6" />
+    <Property Type="Int64" Name="ithalat" Nullable="true" />
+    <Property Type="Int64" Name="ihracat" Nullable="true" />
+    <Property Type="Int64" Name="hacim" Nullable="true" />
+    <Property Type="Int64" Name="denge" Nullable="true" />
+  </ComplexType>
+</Schema>
